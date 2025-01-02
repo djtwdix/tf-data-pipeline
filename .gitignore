@@ -3,3 +3,4 @@
 *.tfstate.backup
 data.json
 data2.json
+.terraform.lock.hcl
