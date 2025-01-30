@@ -2,17 +2,17 @@
 
 data "archive_file" "lambda_zip" {
   type        = "zip"
-  source_dir = "./lambda-function"
+  source_dir  = "./lambda-function"
   output_path = "./lambda_function.zip"
 }
 
 //create lambda function
 
 resource "aws_lambda_function" "dt-data-processor" {
-  function_name = "dt-data-processor"
-  role          = aws_iam_role.lambda_role.arn
-  handler       = "index.handler"
-  runtime       = "nodejs20.x"
+  function_name    = "dt-data-processor"
+  role             = aws_iam_role.lambda_role.arn
+  handler          = "index.handler"
+  runtime          = "nodejs20.x"
   filename         = data.archive_file.lambda_zip.output_path
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
 
