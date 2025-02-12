@@ -26,6 +26,11 @@ resource "aws_glue_catalog_table" "dt-data-table" {
       type = "string"
     }
 
+    columns {
+      name = "processed"
+      type = "boolean"
+    }
+
     ser_de_info {
       serialization_library = "org.openx.data.jsonserde.JsonSerDe"
     }
