@@ -5,3 +5,5 @@ data.json
 data2.json
 .terraform.lock.hcl
 lambda_function.zip
+
+/node_modules
