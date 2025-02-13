@@ -1,8 +1,7 @@
 /.terraform/
 *.tfstate
 *.tfstate.backup
-data.json
-data2.json
+/data
 .terraform.lock.hcl
 lambda_function.zip
 
