@@ -58,8 +58,9 @@ This project sets up an AWS data pipeline using Terraform. It includes:
 ## Deployment
 
 1. Ensure you have AWS credentials configured.
-2. Run `terraform init` to initialize Terraform.
-3. Run `terraform apply` to deploy the resources.
+2. Run `npm install` to install aws-sdk/client-s3
+3. Run `terraform init` to initialize Terraform.
+4. Run `terraform apply` to deploy the resources.
 
 ## Cleanup
 
