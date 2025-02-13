@@ -21,6 +21,8 @@ exports.handler = async (event) => {
 
   contentObj.processed = true;
 
+  console.log("Processed Content: ", contentObj);
+
   const putObjectCommand = new PutObjectCommand({
     Bucket: bucket,
     Key: key,
