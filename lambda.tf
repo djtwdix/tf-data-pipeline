@@ -15,7 +15,6 @@ resource "aws_lambda_function" "dt-data-processor" {
   runtime          = "nodejs20.x"
   filename         = data.archive_file.lambda_zip.output_path
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
-
 }
 
 // allow dt-data-pipeline bucket to trigger lambda function
