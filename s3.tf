@@ -26,6 +26,8 @@ resource "aws_s3_bucket_notification" "s3_trigger_lambda" {
   depends_on = [aws_lambda_permission.allow_s3_to_invoke_lambda]
 }
 
+//allow lambda role to get and put objects from the s3
+
 resource "aws_s3_bucket_policy" "dt_data_pipeline_policy" {
   bucket = "dt-data-pipeline"
 
