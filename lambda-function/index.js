@@ -30,13 +30,6 @@ exports.handler = async (event) => {
 
   await s3.send(putObjectCommand);
 
-  console.log(
-    "original content: ",
-    JSON.parse(fileContent),
-    " modified content: ",
-    contentObj
-  );
-
   return {
     statusCode: 200,
     body: JSON.stringify("File processed successfully!"),
