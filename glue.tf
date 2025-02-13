@@ -18,7 +18,9 @@ resource "aws_glue_catalog_table" "dt-data-table" {
 
   storage_descriptor {
     location      = "s3://${aws_s3_bucket.dt-data-pipeline.bucket}/"
+    //plain text input format, works with json
     input_format  = "org.apache.hadoop.mapred.TextInputFormat"
+    //plain text output format
     output_format = "org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat"
     compressed    = false
     columns {
@@ -31,6 +33,7 @@ resource "aws_glue_catalog_table" "dt-data-table" {
       type = "boolean"
     }
 
+    //add json serialization library
     ser_de_info {
       serialization_library = "org.openx.data.jsonserde.JsonSerDe"
     }
